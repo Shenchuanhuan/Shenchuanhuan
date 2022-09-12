@@ -32,3 +32,4 @@ jobs: # groups together all jobs
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           user_name: chuanchuan
+          user_email: mailforshen@gmail.com
