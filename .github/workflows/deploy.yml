@@ -24,6 +24,8 @@ jobs: # groups together all jobs
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: Clean
+        run: npm clean
       - name: Build
         run: npm run build
       - name: Deploy
