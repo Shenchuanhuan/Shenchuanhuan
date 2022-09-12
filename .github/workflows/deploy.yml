@@ -1,13 +1,15 @@
 name: deploy #[optional] The name of the workflow as it will appear in the Actions tab of the GitHub repository.
 
 on:
-  push: # Specifies the trigger for this workflow. if no detail, maybe use [push]?
+  pull-request: # Specifies the trigger for this workflow. if no detail, maybe use [push]?
+    types: 
+      - closed
     branches:
       - main  # default branch
 
 jobs: # groups together all jobs
-  deploy: # job name
-    name: deploy blog
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # use what action
