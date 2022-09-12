@@ -1,7 +1,7 @@
 name: deploy #[optional] The name of the workflow as it will appear in the Actions tab of the GitHub repository.
 
 on:
-  pull-request: # Specifies the trigger for this workflow. if no detail, maybe use [push]?
+  pull_request: # Specifies the trigger for this workflow. if no detail, maybe use [push]?
     types: 
       - closed
     branches:
