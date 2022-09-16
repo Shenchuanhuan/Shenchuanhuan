@@ -1,3 +1,7 @@
+---
+title: IndexedDB笔记
+---
+
 # 什么是indexdb?
 IndexedDB 是一种可以让你在用户的浏览器内持久化存储数据的方法。IndexedDB 为生成 Web Application 提供了丰富的查询能力，使我们的应用在在线和离线时都可以正常工作。
 
