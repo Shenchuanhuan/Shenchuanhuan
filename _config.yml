@@ -4,11 +4,11 @@
 
 # Site
 title: Chuan's Blog!
-subtitle: ''
-description: ''
-keywords:
+subtitle: 'Join your self'
+description: 'FE DEV'
+# keywords:
 author: Chuan
-language: en
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: Hacker
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
