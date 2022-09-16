@@ -1,5 +1,6 @@
 ---
 title: Github Actions
+date: 2022-09-12
 ---
 
 https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions
