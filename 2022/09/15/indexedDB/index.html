@@ -188,12 +188,22 @@
 </li>
 </ul>
 <hr>
-<h3 id="IDBTransaction"><a href="#IDBTransaction" class="headerlink" title="IDBTransaction"></a>IDBTransaction</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction">mdn doc</a></p>
+<h3 id="IDBTransaction"><a href="#IDBTransaction" class="headerlink" title="IDBTransaction"></a>IDBTransaction</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction">mdn doc</a><br>当<code>transaction</code>完成时，它的complete事件会被触发。‼️这也意味着，用一个变量保存<code>transaction</code>拿到的<code>objectStore</code>没有意义，因为当<code>transaction</code>结束后，变量保存的<code>objectStore</code>也会失效。</p>
 <hr>
 <h3 id="IDBRequest"><a href="#IDBRequest" class="headerlink" title="IDBRequest"></a>IDBRequest</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest">mdn doc</a></p>
 <hr>
 <h3 id="IDBObjectStore"><a href="#IDBObjectStore" class="headerlink" title="IDBObjectStore"></a>IDBObjectStore</h3><hr>
 <p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore">mdn doc</a></p>
+<ul>
+<li>方法<ul>
+<li>put<ul>
+<li>定义<br>  用给的值更新数据库里对应的数据，如果数据不存在，则插入这条数据。</li>
+<li>用法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h3 id="创建indexedDB数据库"><a href="#创建indexedDB数据库" class="headerlink" title="创建indexedDB数据库"></a>创建indexedDB数据库</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> db;</span><br><span class="line"><span class="keyword">const</span> request = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(name, version);</span><br><span class="line">request.<span class="property">onerror</span> = <span class="keyword">function</span>(<span class="params">evt</span>) &#123;</span><br><span class="line">    <span class="comment">// error on open</span></span><br><span class="line">&#125;;</span><br><span class="line">request.<span class="property">onsuccess</span> = <span class="keyword">function</span>(<span class="params">evt</span>) &#123;</span><br><span class="line">    <span class="comment">// db = evt.target.result;</span></span><br><span class="line">    db = <span class="variable language_">this</span>.<span class="property">result</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       

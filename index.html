@@ -65,6 +65,53 @@
 
   
     
+    <h3 class="article-title"><a href="/Shenchuanhuan/2022/09/16/resolved-questions/"><span>解决过的问题集</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/Shenchuanhuan/2022/09/16/resolved-questions/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-09-16T16:00:00.000Z">
+          2022-09-16
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="mac提示：系统中现有的软件载入了由“Oracle-America-Inc-”签名的系统扩展，该扩展将与后续macOS版本不兼容。请联系开发者以获得支持。"><a href="#mac提示：系统中现有的软件载入了由“Oracle-America-Inc-”签名的系统扩展，该扩展将与后续macOS版本不兼容。请联系开发者以获得支持。" class="headerlink" title="mac提示：系统中现有的软件载入了由“Oracle America, Inc.”签名的系统扩展，该扩展将与后续macOS版本不兼容。请联系开发者以获得支持。"></a>mac提示：系统中现有的软件载入了由“Oracle America, Inc.”签名的系统扩展，该扩展将与后续macOS版本不兼容。请联系开发者以获得支持。</h3><pre><code>macOS 会随着系统版本的更新逐步淘汰旧版本系统扩展，以保证最佳的安全性与性能。某些旧版软件中的某些系统扩展可能会随着后续系统版本的更新而不再受支持，届时部分软件功能将受限，你需要获取该软件的最新版本以保证后续支持。如要获取来自 Apple 的，或者已经上架 Mac App Store 的第三方 App 的更新，请了解如何获取 Mac 软件和更新。如果你使用的第三方软件没有上架 Mac App Store，一般在 App 的偏好设置中会有“检查更新”的选项，你也可以自行前往该 App 的官方网站以获取其最新版本。（根据“MATT INGALLS”的签名推测该 App 可能是一个名为“Soundflower”的音频内录工具。）
+</code></pre>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/Shenchuanhuan/2022/09/15/indexedDB/"><span>IndexedDB</span></a></h3>
     
   
@@ -186,12 +233,22 @@
 </li>
 </ul>
 <hr>
-<h3 id="IDBTransaction"><a href="#IDBTransaction" class="headerlink" title="IDBTransaction"></a>IDBTransaction</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction">mdn doc</a></p>
+<h3 id="IDBTransaction"><a href="#IDBTransaction" class="headerlink" title="IDBTransaction"></a>IDBTransaction</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction">mdn doc</a><br>当<code>transaction</code>完成时，它的complete事件会被触发。‼️这也意味着，用一个变量保存<code>transaction</code>拿到的<code>objectStore</code>没有意义，因为当<code>transaction</code>结束后，变量保存的<code>objectStore</code>也会失效。</p>
 <hr>
 <h3 id="IDBRequest"><a href="#IDBRequest" class="headerlink" title="IDBRequest"></a>IDBRequest</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest">mdn doc</a></p>
 <hr>
 <h3 id="IDBObjectStore"><a href="#IDBObjectStore" class="headerlink" title="IDBObjectStore"></a>IDBObjectStore</h3><hr>
 <p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore">mdn doc</a></p>
+<ul>
+<li>方法<ul>
+<li>put<ul>
+<li>定义<br>  用给的值更新数据库里对应的数据，如果数据不存在，则插入这条数据。</li>
+<li>用法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h3 id="创建indexedDB数据库"><a href="#创建indexedDB数据库" class="headerlink" title="创建indexedDB数据库"></a>创建indexedDB数据库</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> db;</span><br><span class="line"><span class="keyword">const</span> request = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(name, version);</span><br><span class="line">request.<span class="property">onerror</span> = <span class="keyword">function</span>(<span class="params">evt</span>) &#123;</span><br><span class="line">    <span class="comment">// error on open</span></span><br><span class="line">&#125;;</span><br><span class="line">request.<span class="property">onsuccess</span> = <span class="keyword">function</span>(<span class="params">evt</span>) &#123;</span><br><span class="line">    <span class="comment">// db = evt.target.result;</span></span><br><span class="line">    db = <span class="variable language_">this</span>.<span class="property">result</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
@@ -252,7 +309,8 @@
   <div class="article-content">
     <div class="entry">
       
-        
+        <p><a target="_blank" rel="noopener" href="https://github.com/guodongxiaren/README">原文来自于这里</a></p>
+
       
     </div>
 
@@ -261,6 +319,13 @@
   <div class="article-footer">
     <div class="article-meta pull-left">
 
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/Shenchuanhuan/categories/转载/">转载</a>
+    </span>
     
 
     
