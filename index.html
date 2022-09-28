@@ -65,6 +65,72 @@
 
   
     
+    <h3 class="article-title"><a href="/Shenchuanhuan/2022/09/28/cannot-resolve-files/"><span>Can&#39;t resolve &#39;xxx&#39; in &#39;xx&#39;</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/Shenchuanhuan/2022/09/28/cannot-resolve-files/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-09-28T16:00:00.000Z">
+          2022-09-28
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>如果：</p>
+<ol>
+<li>使用<code>webpack</code>配置了文件解析<code>loader</code></li>
+<li>文件引入时（不写文件后缀）: <code>import A from &#39;../src/test&#39;</code></li>
+</ol>
+<p>遇到了这样的提示：<code>Can&#39;t resolve &#39;xxx&#39; in &#39;xx&#39;</code>，可以检查下<code>resolve.extensions</code>配置。</p>
+<hr>
+<h3 id="resolve-extensions"><a href="#resolve-extensions" class="headerlink" title="resolve.extensions"></a>resolve.extensions</h3><p><a target="_blank" rel="noopener" href="https://webpack.js.org/configuration/resolve/#resolveextensions">webpack.resolve</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">        <span class="attr">extensions</span>: [<span class="string">&#x27;.jsx&#x27;</span>, <span class="string">&#x27;.json&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>配置了<code>extensions</code>后，引入文件时可以省略后缀名。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">File</span> <span class="keyword">from</span> <span class="string">&#x27;../path/to/file&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>webpack会按配置顺序来解析相应后缀文件，如果有同名但后缀不同的文件，只会解析后缀是<code>extension</code>配置数组中第一个配置的文件，其它的同名文件则会跳过。</p>
+<p>‼️ 上面提到的<code>extensions</code>配置方式会覆盖掉默认的<code>extensions</code>配置。但是可以使用<code>&#39;...&#39;</code>来获取默认配置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">        <span class="attr">extensions</span>: [<span class="string">&#x27;.ts&#x27;</span>, <span class="string">&#x27;...&#x27;</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/Shenchuanhuan/tags/Webpack/">Webpack</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/Shenchuanhuan/2022/09/16/resolved-questions/"><span>解决过的问题集</span></a></h3>
     
   
