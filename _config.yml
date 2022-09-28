@@ -4,11 +4,11 @@
 
 # Site
 title: Chuan's Blog!
-subtitle: ''
-description: ''
-keywords:
+subtitle: 'Join your self'
+description: 'FE DEV'
+# keywords:
 author: Chuan
-language: en
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -91,13 +91,14 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
+  - "google6818be837ed8e7e8.html"
 exclude:
 ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: Hacker
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

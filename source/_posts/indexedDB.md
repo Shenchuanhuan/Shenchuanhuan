@@ -1,5 +1,8 @@
 ---
-title: IndexedDB笔记
+title: IndexedDB
+date: 2022-09-16
+categories: [笔记]
+tags: [indexedDB, database]
 ---
 
 # 什么是indexdb?
