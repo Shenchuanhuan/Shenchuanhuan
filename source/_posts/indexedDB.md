@@ -99,6 +99,7 @@ IndexedDB 是一种可以让你在用户的浏览器内持久化存储数据的�
 --------------
 ### IDBTransaction
 [mdn doc](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction)
+当`transaction`完成时，它的complete事件会被触发。‼️这也意味着，用一个变量保存`transaction`拿到的`objectStore`没有意义，因为当`transaction`结束后，变量保存的`objectStore`也会失效。
 
 --------------
 ### IDBRequest
@@ -111,6 +112,11 @@ IndexedDB 是一种可以让你在用户的浏览器内持久化存储数据的�
 ### IDBObjectStore
 --------------
 [mdn doc](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore)
+* 方法
+    * put
+        * 定义
+            用给的值更新数据库里对应的数据，如果数据不存在，则插入这条数据。
+        * 用法
 
 ---------------
 
