@@ -27,7 +27,30 @@ tags: [Webpack]
 ```javascript
     import File from '../path/to/file';
 ```
-webpack会按配置顺序来解析相应后缀文件，如果有同名但后缀不同的文件，只会解析后缀是`extension`配置数组中第一个配置的文件，其它的同名文件则会跳过。
+需要注意的是，如果被引入文件所在文件夹还存在同名不同后缀的文件，`webpack`会根据`extension`配置数组顺序(数组中较为先前的)来解析引入文件，其它则会被略过。
+比如：
+```javascript
+    // extensions配置
+    module.exports = {
+        //...
+        resolve: {
+            extensions: ['.jsx', '.css', '.json', '...'];
+        }
+    };
+
+    // 目录结构
+    // - src
+    //  - index.jsx
+    //  - index.css
+    //  - test.css
+    //  - test.json
+
+    // index.jsx
+    import './index'; // webpack会认为是index.jsx，不能引入CSS
+    import './index.css'; // 带后缀的全称，能够引入CSS
+    import './test'; // 不带后缀，但.css配置在.json配置之前，因此会引入test.css而不是test.json
+```
+[上面🌰的地址](https://github.com/Shenchuanhuan/blog-demo/tree/main/webpack/extensions-demo)
 
 ‼️ 上面提到的`extensions`配置方式会覆盖掉默认的`extensions`配置。但是可以使用`'...'`来获取默认配置。
 ```javascript
